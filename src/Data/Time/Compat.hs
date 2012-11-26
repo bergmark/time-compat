@@ -22,8 +22,8 @@
 --   original value is returned intact.  If you're using an older
 --   @directory@, for example because you're building with GHC 7.4, the
 --   'OldTime.ClockTime' returned by @getModificationTime@ will be
---   converted to a @Time.UTCTime@ and be compatible with your code ported
---   to the new @time@ package.
+--   converted to a 'Time.UTCTime' and will be compatible with your code
+--   ported to the new @time@ package.
 module Data.Time.Compat
     ( -- * Converting between representations
       ToUTCTime(..)
