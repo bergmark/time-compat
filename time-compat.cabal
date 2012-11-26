@@ -1,6 +1,7 @@
 name          : time-compat
 version       : 0.1.0
 homepage      : http://hub.darcs.net/dag/time-compat
+bug-reports   : http://hub.darcs.net/dag/time-compat/issues
 category      : System
 cabal-version : >= 1.10
 build-type    : Simple
