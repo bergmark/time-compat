@@ -12,10 +12,8 @@ author        : Dag Odenhall
 maintainer    : dag.odenhall@gmail.com
 
 synopsis      : Compatibility with old-time for the time package
-description   : Compatibility with the
-                <old-time http://hackage.haskell.org/package/old-time>
-                package for the \"new\"
-                <time http://hackage.haskell.org/package/time> package.
+description   : Compatibility with the <old-time> package for the \"new\"
+                <time> package.
 
 source-repository head
   type     : darcs
