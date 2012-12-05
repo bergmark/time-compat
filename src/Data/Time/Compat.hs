@@ -1,8 +1,8 @@
 {-# LANGUAGE RecordWildCards #-}
 
 -- | Compatibility with the
---   <old-time http://hackage.haskell.org/package/old-time> package for the
---   \"new\" <time http://hackage.haskell.org/package/time> package.
+--   <http://hackage.haskell.org/package/old-time old-time> package for the
+--   \"new\" <http://hackage.haskell.org/package/time time> package.
 --
 --   This is useful for writing portable code; in particular, if you're
 --   using the <directory http://hackage.haskell.org/package/directory>
