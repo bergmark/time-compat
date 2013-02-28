@@ -47,7 +47,7 @@ instance ToUTCTime OldTime.CalendarTime where
         Time.UTCTime day diffTime
       where
         year = fromIntegral ctYear
-        month = fromEnum ctMonth
+        month = fromEnum ctMonth + 1
         day = Time.fromGregorian year month ctDay
         sec = ctHour*60^2 + ctMin*60 + ctSec
         pico = fromIntegral sec*10^12 + ctPicosec
