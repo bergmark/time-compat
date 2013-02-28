@@ -30,8 +30,9 @@ module Data.Time.Compat
     )
   where
 
-import qualified Data.Time   as Time
-import qualified System.Time as OldTime
+import qualified Data.Time             as Time
+import qualified Data.Time.Clock.POSIX as Time
+import qualified System.Time           as OldTime
 
 class ToUTCTime a where
     toUTCTime :: a -> Time.UTCTime
@@ -39,16 +40,10 @@ class ToUTCTime a where
 instance ToUTCTime Time.UTCTime where
     toUTCTime = id
 
-instance ToUTCTime OldTime.ClockTime where
-    toUTCTime = toUTCTime . OldTime.toUTCTime
-
 instance ToUTCTime OldTime.CalendarTime where
-    toUTCTime OldTime.CalendarTime{..} =
-        Time.UTCTime day diffTime
-      where
-        year = fromIntegral ctYear
-        month = fromEnum ctMonth + 1
-        day = Time.fromGregorian year month ctDay
-        sec = ctHour*60^2 + ctMin*60 + ctSec
-        pico = fromIntegral sec*10^12 + ctPicosec
-        diffTime = Time.picosecondsToDiffTime pico
+    toUTCTime = toUTCTime . OldTime.toClockTime
+
+instance ToUTCTime OldTime.ClockTime where
+    toUTCTime (OldTime.TOD sec pico) =
+        Time.posixSecondsToUTCTime
+          (fromIntegral sec + (fromIntegral pico / 10^12))
