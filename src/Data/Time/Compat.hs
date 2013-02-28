@@ -5,7 +5,7 @@
 --   \"new\" <http://hackage.haskell.org/package/time time> package.
 --
 --   This is useful for writing portable code; in particular, if you're
---   using the <directory http://hackage.haskell.org/package/directory>
+--   using the <http://hackage.haskell.org/package/directory directory>
 --   package and you want your code to build with both GHC 7.6 and earlier
 --   versions.  The version of @directory@ used with GHC 7.6 changed
 --   a dependency from @old-time@ to @time@ which means its
